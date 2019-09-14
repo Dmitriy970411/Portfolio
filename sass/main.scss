@@ -1,0 +1,24 @@
+@import 'vendors/include-media';
+@import 'vendors/breakpoints_media-expressions';
+@import 'vendors/normalize';
+@import 'vendors/icomoon';
+@import 'vendors/magnific-popup';
+@import 'vendors/slick';
+
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/forms';
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'components/modal-window';
+@import 'components/form';
+
+
+@import 'pages/homepage';
+
+
+

@@ -1,0 +1,391 @@
+// FIRST-MODAL-WINDOW
+.modal {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   z-index: 1000;
+   background-color: rgba(47, 47, 47, 0.9);
+   display: none;
+   padding: 1rem;
+   overflow: scroll;
+
+   &.show {
+     display: flex; 
+   }
+}
+
+.modal__dialog {
+   width: 100%;
+   max-width: 1230px;
+   margin: auto;
+   position: relative;
+   background-color: #fff;
+
+   // anime
+   transform: rotateX(90deg);
+  transition: transform .2s linear;
+   // anime
+
+
+   &--sm {
+       max-width: 900px;
+      //  for IE-11
+       max-height: 600px;
+   }
+
+}
+
+.modal-project {
+  display: flex;
+}
+
+.modal-project__item {
+   display: flex;
+   background-color: $white;
+   position: relative;
+   width: 100%;
+   max-width: 800px;
+   margin : auto;
+   flex-wrap: wrap;
+}
+
+.modal-project__decription {
+   padding: 20px;
+}
+
+.modal-project__img {
+   width: 50%;
+   @include background-image;
+   padding: 20% 0;
+
+   
+   @include media ('<=tablet') {
+      width: 100%;
+      padding: 30% 0;
+      }
+}
+
+.modal-project__decription {
+   width: 50%;
+   position: relative;
+
+   @include media ('<=tablet') {
+      width: 100%
+      }
+}
+
+.modal-project__header {
+   text-transform: uppercase;
+   margin-bottom: 33px;
+}
+
+.modal-project__title {
+   text-shadow: 2px 5px 2px #DC603A;
+   text-align: center;
+}
+
+
+.modal-project__cat {
+   color: $light-gray;
+   font-size: 1.2rem;
+
+   time {
+      border-left: 1px solid $light-gray;
+      padding-left: 15px;
+      margin-left: 15px;
+   }
+}
+
+.modal-project__client {
+   font-weight: 700;
+   font-size: 1.063rem;
+   margin-bottom: 33px;
+
+   .company {
+      margin-top: 0.2rem;
+      font-size: 0.94rem;
+      font-weight: normal;
+      font-style: italic;
+      color: $gray;
+   }
+}
+
+.modal-project__text {
+   font-size: 0.75rem;
+   font-weight: 300;
+   color: $gray;
+   line-height: 2;
+   margin-bottom: 110px;
+}
+
+.mfp-close {
+   color: transparent;
+}
+
+.mfp-close::after {
+   content: "\e902";
+   font-family: 'icomoon' !important;
+   position: absolute;
+   top: 0;
+   left: 9px;
+   z-index: 10;
+}
+
+.modal-close {
+   position: absolute;
+   display: inline-block;
+   top: 20px;
+   right: 20px;
+   border: none;
+   outline: none;
+   @extend %transition;
+   background-color: transparent;
+   cursor: pointer;
+   z-index: 5;
+
+   @include media ('<=tablet') {
+      right: 10px;
+   }
+
+   &:hover {
+      transform: translateY(-3px);
+  }
+
+  i {
+     font-size: 25px;
+  }
+}
+
+// SECOND-MODAL-WINDOW
+
+.modal__content {
+   background-color: $white;
+   padding: 5rem 1rem;
+}
+
+.modal__title {
+   text-align: left;
+   margin-bottom: 53px;
+   text-shadow: 2px 5px 2px #DC603A;
+
+   &.text-center {
+      text-align: center;
+   }
+}
+
+.timeline {
+   margin: 4.2rem auto;
+   display: flex;
+   width: 100%;
+   max-width: 768px;
+   position: relative;
+
+   
+   @include media ('<=tablet') {
+     flex-wrap: wrap;
+      }
+
+   &:before {
+      display: block;
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: $black;
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      @include media ('<=tablet') {
+         display: none;
+
+      }
+   }
+}
+
+.timeline__col {
+   width: 50%;
+
+   @include media ('<=tablet') {
+      width: 100%;
+      text-align: center;
+      }
+}
+
+.timeline__col--left {
+   text-align: right;
+   padding-right: 3.2rem;
+
+   @include media ('<=tablet') {
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid  $gray;
+      }
+}
+
+.timeline__col--right {
+   padding-left: 3.2rem;
+
+   @include media ('<=tablet') {
+      padding: 1rem;
+      }
+}
+
+.timeline__title {
+   text-transform: uppercase;
+   margin-bottom: 2.6rem;
+}
+
+.timeline-item {
+   margin-bottom: 2.6rem;
+
+   &:last-child {
+      margin-bottom: 0;
+   }
+
+   &.timeline-item--aword {
+      display: flex;
+
+      .timeline-item-aword__col {
+         padding-right: 20px;
+
+         .timeline__subtitle {
+            text-transform: uppercase;
+         }
+
+         time {
+            padding-top: 2px;
+         }
+      }
+   }
+
+   time {
+      display: block;
+      font-size: 0.93rem;
+      text-decoration: underline;
+      margin-bottom: 0.8rem;
+   }
+}
+
+.timeline__subtitle {
+   font-size: 1.06rem;
+}
+
+.timeline__position {
+   font-size: 1.06rem;
+   font-style: italic;
+}
+
+.timeline__text {
+   margin-top: 0.8rem;
+   line-height: 1.5;
+   color: $gray;
+}
+
+.progress-bar {
+   margin-bottom: 2.6rem;
+}
+
+.progress-bar__item {
+   display: flex;
+   align-items: center;
+   margin-bottom: 10px;
+}
+
+.progress-bar__right {
+   padding-left: 1.2rem;
+}
+
+.progress-bar__skill {
+   width: 137px;
+   height: 6px;
+   background-color: #efefef;
+}
+
+.progress-bar__line {
+   height: 6px;
+   background-color: $gray;
+   @extend %transition;
+}
+
+.progress-bar__left {
+   width: 125px;
+}
+
+// THIRD-MODAL-WINDOW
+
+.contact {
+   display: flex;
+   flex-wrap: wrap;
+   background-color: $white;
+}
+
+.contact__left {
+   width: 47%;
+   padding: 2rem;
+
+   @include media ('<=tablet') {
+      width: 100%;
+      padding: 1rem;
+      }
+
+   .modal__title {
+      margin-bottom: 5px;
+   }
+}
+
+.contact__right {
+   width: 53%;
+   @include background-image;
+   padding: 30% 0;
+
+   @include media ('<=tablet') {
+      display: none;
+   }
+}
+
+.modal__subtitle {
+   text-transform: uppercase;
+   font-style: 1.6rem;
+   font-weight: normal;
+}
+
+.contact__info {
+   margin: 2rem 0 3rem 0;
+
+   li {
+      @extend %listreset;
+      margin-bottom: 1rem;
+
+      li:last-child {
+         margin-bottom: 0;
+      }
+
+      i {
+         margin-right: 4px;
+      }
+
+      a {
+         @extend %transition;
+         color: $black;
+         font-weight: 300;
+
+         &:hover {
+            text-decoration: none;
+            color: $red;
+         }
+      }
+   }
+}
+
+.contact__form {
+   display: flex;
+   flex-direction: column;
+}
+
+
+
+
+
+
